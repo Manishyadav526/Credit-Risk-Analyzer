@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Credit Risk Prediction
+    </title>
+
+    <link rel="stylesheet" href="/predict.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="predict-navbar">
+
+        <a href="/" class="back-link">
+            <span>←</span>
+            Back to Models
+        </a>
+
+
+        <div class="predict-brand">
+
+            <div class="predict-brand-mark">
+                CR
+            </div>
+
+            <div class="predict-brand-text">
+
+                <strong>
+                    Credit Risk Analyzer
+                </strong>
+
+                <span>
+                    PREDICTION ENGINE
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="active-model-nav">
+
+            <span class="active-dot"></span>
+
+            <span>
+                Isotonic XGBoost
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="predict-page">
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <section class="predict-hero">
+
+            <div class="predict-eyebrow">
+                ACTIVE MODEL
+            </div>
+
+
+            <h1>
+                Credit Risk
+                <span>Prediction</span>
+            </h1>
+
+
+            <p>
+                Enter the applicant's information below to estimate
+                the probability of loan default using the deployed
+                Isotonic XGBoost model.
+            </p>
+
+
+            <div class="model-status-line">
+
+                <span class="status-check">
+                    ✓
+                </span>
+
+                <span>
+                    Currently deployed:
+                </span>
+
+                <strong>
+                    Isotonic XGBoost
+                </strong>
+
+                <span class="status-separator">
+                    •
+                </span>
+
+                <span>
+                    Test Accuracy:
+                </span>
+
+                <strong class="accuracy-highlight">
+                    94.03%
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <div class="prediction-layout">
+
+
+            <!-- =================================================
+                 FORM
+            ================================================== -->
+
+            <section class="prediction-form-card">
+
+                <form id="prediction-form" novalidate>
+
+
+                    <!-- =========================================
+                         SECTION 01 — APPLICANT
+                    ========================================== -->
+
+                    <fieldset class="form-section">
+
+                        <legend>
+
+                            <span class="section-number">
+                                01
+                            </span>
+
+                            Applicant Information
+
+                        </legend>
+
+
+                        <div class="field-grid">
+
+
+                            <!-- Age -->
+
+                            <div class="input-group">
+
+                                <label for="person_age">
+                                    Age
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="number" id="person_age" name="person_age" min="18" max="100"
+                                        placeholder="25" required>
+
+                                    <span class="input-unit">
+                                        years
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Income -->
+
+                            <div class="input-group">
+
+                                <label for="person_income">
+                                    Annual Income
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="input-prefix">
+                                        ₹
+                                    </span>
+
+                                    <input type="number" id="person_income" name="person_income" min="0" step="100"
+                                        placeholder="35000" required>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Home Ownership -->
+
+                            <div class="input-group">
+
+                                <label for="person_home_ownership">
+                                    Home Ownership
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <select id="person_home_ownership" name="person_home_ownership" required>
+
+                                        <option value="">
+                                            Select ownership
+                                        </option>
+
+                                        <option value="RENT">
+                                            Rent
+                                        </option>
+
+                                        <option value="OWN">
+                                            Own
+                                        </option>
+
+                                        <option value="MORTGAGE">
+                                            Mortgage
+                                        </option>
+
+                                        <option value="OTHER">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Employment -->
+
+                            <div class="input-group">
+
+                                <label for="person_emp_length">
+                                    Employment Length
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="number" id="person_emp_length" name="person_emp_length" min="0"
+                                        max="60" step="0.1" placeholder="2" required>
+
+                                    <span class="input-unit">
+                                        years
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- =========================================
+                         SECTION 02 — LOAN
+                    ========================================== -->
+
+                    <fieldset class="form-section">
+
+                        <legend>
+
+                            <span class="section-number">
+                                02
+                            </span>
+
+                            Loan Request
+
+                        </legend>
+
+
+                        <div class="field-grid">
+
+
+                            <!-- Loan Intent -->
+
+                            <div class="input-group">
+
+                                <label for="loan_intent">
+                                    Loan Intent
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <select id="loan_intent" name="loan_intent" required>
+
+                                        <option value="">
+                                            Select intent
+                                        </option>
+
+                                        <option value="PERSONAL">
+                                            Personal
+                                        </option>
+
+                                        <option value="EDUCATION">
+                                            Education
+                                        </option>
+
+                                        <option value="MEDICAL">
+                                            Medical
+                                        </option>
+
+                                        <option value="VENTURE">
+                                            Venture
+                                        </option>
+
+                                        <option value="HOMEIMPROVEMENT">
+                                            Home Improvement
+                                        </option>
+
+                                        <option value="DEBTCONSOLIDATION">
+                                            Debt Consolidation
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Loan Grade -->
+
+                            <div class="input-group">
+
+                                <label for="loan_grade">
+                                    Loan Grade
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <select id="loan_grade" name="loan_grade" required>
+
+                                        <option value="">
+                                            Select grade
+                                        </option>
+
+                                        <option value="A">
+                                            A
+                                        </option>
+
+                                        <option value="B">
+                                            B
+                                        </option>
+
+                                        <option value="C">
+                                            C
+                                        </option>
+
+                                        <option value="D">
+                                            D
+                                        </option>
+
+                                        <option value="E">
+                                            E
+                                        </option>
+
+                                        <option value="F">
+                                            F
+                                        </option>
+
+                                        <option value="G">
+                                            G
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Loan Amount -->
+
+                            <div class="input-group">
+
+                                <label for="loan_amnt">
+                                    Loan Amount
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="input-prefix">
+                                        ₹
+                                    </span>
+
+                                    <input type="number" id="loan_amnt" name="loan_amnt" min="1" step="100"
+                                        placeholder="10000" required>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Interest Rate -->
+
+                            <div class="input-group">
+
+                                <label for="loan_int_rate">
+                                    Interest Rate
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="number" id="loan_int_rate" name="loan_int_rate" min="0" max="100"
+                                        step="0.01" placeholder="14.5" required>
+
+                                    <span class="input-unit">
+                                        %
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Loan Percent Income -->
+
+                            <div class="input-group full-width">
+
+                                <label for="loan_percent_income">
+
+                                    Loan / Income Ratio
+
+                                    <span class="auto-label">
+                                        AUTO
+                                    </span>
+
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="number" id="loan_percent_income" name="loan_percent_income" min="0"
+                                        max="1" step="0.0001" placeholder="0.2857" readonly required>
+
+                                    <span class="input-unit">
+                                        ratio
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    Automatically calculated as
+                                    loan amount ÷ annual income.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- =========================================
+                         SECTION 03 — CREDIT BUREAU
+                    ========================================== -->
+
+                    <fieldset class="form-section">
+
+                        <legend>
+
+                            <span class="section-number">
+                                03
+                            </span>
+
+                            Credit Bureau
+
+                        </legend>
+
+
+                        <div class="field-grid">
+
+
+                            <!-- Previous Default -->
+
+                            <div class="input-group">
+
+                                <label for="cb_person_default_on_file">
+                                    Previous Default
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <select id="cb_person_default_on_file" name="cb_person_default_on_file" required>
+
+                                        <option value="">
+                                            Select status
+                                        </option>
+
+                                        <option value="N">
+                                            No
+                                        </option>
+
+                                        <option value="Y">
+                                            Yes
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Credit History -->
+
+                            <div class="input-group">
+
+                                <label for="cb_person_cred_hist_length">
+                                    Credit History Length
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="number" id="cb_person_cred_hist_length"
+                                        name="cb_person_cred_hist_length" min="0" max="100" placeholder="3" required>
+
+                                    <span class="input-unit">
+                                        years
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- =========================================
+                         SECTION 04 — THRESHOLD
+                    ========================================== -->
+
+                    <fieldset class="form-section threshold-section">
+
+                        <legend>
+
+                            <span class="section-number">
+                                04
+                            </span>
+
+                            Risk Threshold
+
+                        </legend>
+
+
+                        <p class="threshold-description">
+                            Choose how the model should convert the
+                            predicted default probability into a
+                            final risk classification.
+                        </p>
+
+
+                        <div class="threshold-grid">
+
+
+                            <!-- SOFT -->
+
+                            <label class="threshold-card selected" data-threshold="soft">
+
+                                <input type="radio" name="threshold_mode" value="soft" checked>
+
+
+                                <div class="threshold-card-inner">
+
+                                    <div class="threshold-card-top">
+
+                                        <div>
+
+                                            <span class="threshold-name">
+                                                Soft
+                                            </span>
+
+                                            <span class="threshold-focus">
+                                                Accuracy Focused
+                                            </span>
+
+                                        </div>
+
+
+                                        <div class="threshold-radio">
+                                            <span></span>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="threshold-value">
+                                        39%
+                                    </div>
+
+
+                                    <p>
+                                        Uses a higher threshold to
+                                        prioritize overall prediction
+                                        accuracy.
+                                    </p>
+
+
+                                    <div class="threshold-meta">
+
+                                        <span>
+                                            Test Accuracy
+                                        </span>
+
+                                        <strong>
+                                            94.03%
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+
+
+                            <!-- HARD -->
+
+                            <label class="threshold-card" data-threshold="hard">
+
+                                <input type="radio" name="threshold_mode" value="hard">
+
+
+                                <div class="threshold-card-inner">
+
+                                    <div class="threshold-card-top">
+
+                                        <div>
+
+                                            <span class="threshold-name">
+                                                Hard
+                                            </span>
+
+                                            <span class="threshold-focus">
+                                                Default Focused
+                                            </span>
+
+                                        </div>
+
+
+                                        <div class="threshold-radio">
+                                            <span></span>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="threshold-value">
+                                        19%
+                                    </div>
+
+
+                                    <p>
+                                        Uses a lower threshold to
+                                        reduce missed default cases.
+                                    </p>
+
+
+                                    <div class="threshold-meta">
+
+                                        <span>
+                                            False Negatives
+                                        </span>
+
+                                        <strong>
+                                            199
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- =========================================
+                         SUBMIT
+                    ========================================== -->
+
+                    <div class="submit-area">
+
+                        <button type="submit" id="predict-btn">
+
+                            <span class="btn-text">
+                                Analyze Credit Risk
+                            </span>
+
+                            <span class="btn-loader" aria-hidden="true"></span>
+
+                            <span class="btn-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <p class="submit-note">
+                            Prediction is generated using the
+                            deployed Isotonic XGBoost model.
+                        </p>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RESULT PANEL
+            ================================================== -->
+
+            <aside class="result-card" id="result-card">
+
+
+                <!-- EMPTY STATE -->
+
+                <div class="result-empty" id="result-empty">
+
+                    <div class="empty-icon">
+                        <span>
+                            %
+                        </span>
+                    </div>
+
+
+                    <h2>
+                        Risk Assessment
+                    </h2>
+
+
+                    <p>
+                        Complete the application form and run the
+                        analysis to see the predicted probability
+                        of loan default.
+                    </p>
+
+
+                    <div class="empty-model">
+
+                        <span class="empty-model-dot"></span>
+
+                        Isotonic XGBoost
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RESULT CONTENT -->
+
+                <div class="result-content" id="result-content" hidden>
+
+                    <!-- Result header -->
+
+                    <div class="result-header">
+
+                        <div>
+
+                            <span class="result-label">
+                                RISK ASSESSMENT
+                            </span>
+
+                            <span class="result-mode-badge" id="result-mode-badge">
+                                SOFT
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Risk result -->
+
+                    <div class="risk-result" id="risk-result">
+
+                        <div class="risk-status" id="risk-status">
+                            LOW RISK
+                        </div>
+
+
+                        <div class="risk-probability">
+
+                            <span id="probability-number">
+                                0.0%
+                            </span>
+
+                            <span>
+                                probability of default
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Probability meter -->
+
+                    <div class="probability-section">
+
+                        <div class="probability-heading">
+
+                            <span>
+                                Default Probability
+                            </span>
+
+                            <strong id="probability-value-label">
+                                0.0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="probability-track">
+
+                            <div class="probability-fill" id="probability-fill"></div>
+
+
+                            <div class="threshold-marker" id="threshold-marker">
+
+                                <span id="threshold-label">
+                                    39%
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="probability-scale">
+
+                            <span>
+                                0%
+                            </span>
+
+                            <span>
+                                100%
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Result facts -->
+
+                    <div class="result-facts">
+
+                        <div class="result-fact">
+
+                            <span>
+                                Probability
+                            </span>
+
+                            <strong id="fact-probability">
+                                0.0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-fact">
+
+                            <span>
+                                Threshold
+                            </span>
+
+                            <strong id="fact-threshold">
+                                39%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-fact">
+
+                            <span>
+                                Mode
+                            </span>
+
+                            <strong id="fact-mode">
+                                Soft
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Explanation -->
+
+                    <div class="risk-explanation" id="risk-explanation">
+                        The predicted default probability is below
+                        the selected threshold.
+                    </div>
+
+
+                    <!-- Active model -->
+
+                    <div class="result-model">
+
+                        <div class="result-model-icon">
+                            IX
+                        </div>
+
+                        <div>
+
+                            <span>
+                                MODEL USED
+                            </span>
+
+                            <strong>
+                                Isotonic XGBoost
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+
+        <!-- =================================================
+             MODEL INFORMATION
+        ================================================== -->
+
+        <section class="model-info-section">
+
+            <div class="model-info-icon">
+                IX
+            </div>
+
+
+            <div class="model-info-content">
+
+                <span>
+                    DEPLOYED MODEL
+                </span>
+
+
+                <h2>
+                    Isotonic XGBoost
+                </h2>
+
+
+                <p>
+                    The deployed model combines tuned XGBoost
+                    classification with isotonic probability
+                    calibration, providing calibrated estimates
+                    of loan default risk.
+                </p>
+
+            </div>
+
+
+            <div class="model-info-accuracy">
+
+                <span>
+                    TEST ACCURACY
+                </span>
+
+                <strong>
+                    94.03%
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HOW IT WORKS
+        ================================================== -->
+
+        <section class="predict-how-section">
+
+            <div class="predict-section-label">
+                PROCESS
+            </div>
+
+
+            <h2>
+                How Your Prediction Works
+            </h2>
+
+
+            <p class="predict-section-description">
+                The application passes your loan information through
+                the deployed machine learning pipeline and applies
+                the selected classification threshold.
+            </p>
+
+
+            <div class="predict-process-grid">
+
+
+                <div class="predict-process-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Applicant Data
+                    </h3>
+
+                    <p>
+                        Your personal, employment and credit
+                        information is collected.
+                    </p>
+
+                </div>
+
+
+
+                <div class="predict-process-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        ML Prediction
+                    </h3>
+
+                    <p>
+                        Isotonic XGBoost calculates the probability
+                        of loan default.
+                    </p>
+
+                </div>
+
+
+
+                <div class="predict-process-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Threshold
+                    </h3>
+
+                    <p>
+                        The selected Soft or Hard threshold converts
+                        probability into a classification.
+                    </p>
+
+                </div>
+
+
+
+                <div class="predict-process-card">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Risk Result
+                    </h3>
+
+                    <p>
+                        The system displays the probability and
+                        resulting risk classification.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="predict-footer">
+
+        <div class="predict-footer-inner">
+
+
+            <div class="predict-footer-brand">
+
+                <div class="predict-footer-logo">
+                    CR
+                </div>
+
+                <div>
+
+                    <strong>
+                        Credit Risk Analyzer
+                    </strong>
+
+                    <span>
+                        ML-based loan default prediction
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="predict-footer-developer">
+
+                Developed by
+                <strong>
+                    Manish Yadav
+                </strong>
+
+            </div>
+
+
+
+            <a href="https://github.com/Manishyadav526" target="_blank" rel="noopener noreferrer"
+                class="predict-github">
+                GitHub
+                <span>↗</span>
+            </a>
+
+        </div>
+
+
+        <div class="predict-footer-bottom">
+
+            <span>
+                © 2026 Credit Risk Analyzer
+            </span>
+
+            <span>
+                For educational and demonstration purposes.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="/predict.js?v=2"></script>
+
+</body>
+
+</html>

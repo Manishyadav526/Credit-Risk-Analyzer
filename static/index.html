@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Credit Risk Analyzer</title>
+
+    <link rel="stylesheet" href="/home.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-brand">
+
+            <div class="brand-mark">
+                CR
+            </div>
+
+            <div class="brand-text">
+                <div class="brand-title">
+                    Credit Risk
+                </div>
+
+                <div class="brand-subtitle">
+                    ANALYZER
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Active model CTA -->
+        <a href="/predict.html" class="nav-test-btn">
+            Test Active Model
+            <span>→</span>
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO SECTION
+        ====================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    ML-BASED CREDIT LOAN DEFAULT ANALYZER
+                </div>
+
+
+                <h1>
+                    Credit Risk
+                    <span>Prediction</span>
+                </h1>
+
+
+                <p class="hero-description">
+                    Explore the machine learning models used to analyze
+                    loan applications and predict the probability of
+                    loan default.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MODEL SECTION
+        ====================================================== -->
+
+        <section class="models-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>
+                        Evaluated Models
+                    </h2>
+
+                    <p>
+                        Compare the models evaluated during the
+                        credit risk modeling process.
+                    </p>
+                </div>
+
+
+                <div class="model-count">
+                    06 MODELS
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 MODEL GRID
+            ================================================== -->
+
+            <div class="model-grid">
+
+
+                <!-- =================================================
+                     MODEL 01
+                ================================================== -->
+
+                <article class="model-card">
+
+                    <div class="model-top">
+
+                        <span class="model-number">
+                            01
+                        </span>
+
+                        <div class="model-icon lr">
+                            LR
+                        </div>
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <h3>
+                            Baseline Logistic Regression
+                        </h3>
+
+                        <p>
+                            A simple linear classification model used
+                            as the initial baseline for credit risk
+                            prediction.
+                        </p>
+
+                    </div>
+
+
+                    <div class="model-bottom">
+
+                        <div class="accuracy">
+
+                            <span>
+                                ACCURACY
+                            </span>
+
+                            <strong>
+                                81%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="reference-label">
+                            Reference Model
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MODEL 02
+                ================================================== -->
+
+                <article class="model-card">
+
+                    <div class="model-top">
+
+                        <span class="model-number">
+                            02
+                        </span>
+
+                        <div class="model-icon xg">
+                            XG
+                        </div>
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <h3>
+                            Baseline XGBoost
+                        </h3>
+
+                        <p>
+                            A gradient boosting model designed to
+                            capture nonlinear relationships in
+                            loan applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="model-bottom">
+
+                        <div class="accuracy">
+
+                            <span>
+                                ACCURACY
+                            </span>
+
+                            <strong>
+                                92%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="reference-label">
+                            Reference Model
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MODEL 03
+                ================================================== -->
+
+                <article class="model-card">
+
+                    <div class="model-top">
+
+                        <span class="model-number">
+                            03
+                        </span>
+
+                        <div class="model-icon xg">
+                            XG
+                        </div>
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <h3>
+                            Tuned XGBoost
+                        </h3>
+
+                        <p>
+                            Hyperparameter-tuned XGBoost optimized
+                            using cross-validation and average
+                            precision.
+                        </p>
+
+                    </div>
+
+
+                    <div class="model-bottom">
+
+                        <div class="accuracy">
+
+                            <span>
+                                ACCURACY
+                            </span>
+
+                            <strong>
+                                93%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="reference-label">
+                            Reference Model
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MODEL 04
+                ================================================== -->
+
+                <article class="model-card">
+
+                    <div class="model-top">
+
+                        <span class="model-number">
+                            04
+                        </span>
+
+                        <div class="model-icon lr">
+                            LR
+                        </div>
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <h3>
+                            Tuned Logistic Regression
+                        </h3>
+
+                        <p>
+                            Logistic Regression optimized through
+                            hyperparameter search for improved
+                            performance.
+                        </p>
+
+                    </div>
+
+
+                    <div class="model-bottom">
+
+                        <div class="accuracy">
+
+                            <span>
+                                ACCURACY
+                            </span>
+
+                            <strong>
+                                81%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="reference-label">
+                            Reference Model
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MODEL 05 — ACTIVE MODEL
+                ================================================== -->
+
+                <article class="model-card active-model-card">
+
+                    <div class="active-badge">
+                        <span></span>
+                        ACTIVE MODEL
+                    </div>
+
+
+                    <div class="model-top">
+
+                        <span class="model-number">
+                            05
+                        </span>
+
+                        <div class="model-icon isotonic">
+                            IX
+                        </div>
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <h3>
+                            Isotonic XGBoost
+                        </h3>
+
+                        <p>
+                            Calibrated XGBoost using isotonic regression
+                            for more reliable default probability
+                            estimation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="model-bottom">
+
+                        <div class="accuracy">
+
+                            <span>
+                                TEST ACCURACY
+                            </span>
+
+                            <strong>
+                                94.03%
+                            </strong>
+
+                        </div>
+
+
+                        <a href="/predict.html" class="active-model-btn">
+                            Test Active Model
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MODEL 06
+                ================================================== -->
+
+                <article class="model-card">
+
+                    <div class="model-top">
+
+                        <span class="model-number">
+                            06
+                        </span>
+
+                        <div class="model-icon sigmoid">
+                            SX
+                        </div>
+
+                    </div>
+
+
+                    <div class="model-content">
+
+                        <h3>
+                            Sigmoid XGBoost
+                        </h3>
+
+                        <p>
+                            Calibrated XGBoost using sigmoid calibration
+                            for improved probability estimation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="model-bottom">
+
+                        <div class="accuracy">
+
+                            <span>
+                                ACCURACY
+                            </span>
+
+                            <strong>
+                                94.00%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="reference-label">
+                            Reference Model
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ACTIVE MODEL CALLOUT
+        ====================================================== -->
+
+        <section class="active-model-section">
+
+            <div class="active-model-icon">
+                ✓
+            </div>
+
+
+            <div class="active-model-info">
+
+                <div class="active-section-label">
+                    CURRENTLY DEPLOYED
+                </div>
+
+
+                <h2>
+                    Only Isotonic XGBoost is Currently Active
+                </h2>
+
+
+                <p>
+                    Isotonic XGBoost is the only model currently
+                    deployed for loan default predictions. It achieved
+                    <strong>94.03% test accuracy</strong> during model
+                    evaluation and provides calibrated default
+                    probabilities.
+                </p>
+
+            </div>
+
+
+            <a href="/predict.html" class="active-model-cta">
+                Test Active Model
+                <span>→</span>
+            </a>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             HOW IT WORKS
+        ====================================================== -->
+
+        <section class="how-section">
+
+            <div class="section-heading how-heading">
+
+                <div>
+
+                    <div class="small-section-label">
+                        WORKFLOW
+                    </div>
+
+                    <h2>
+                        How It Works
+                    </h2>
+
+                    <p>
+                        From applicant information to a calibrated
+                        credit risk assessment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-grid">
+
+
+                <!-- STEP 01 -->
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+                    <div class="process-line"></div>
+
+                    <h3>
+                        Enter Loan Details
+                    </h3>
+
+                    <p>
+                        Provide applicant, employment, loan and
+                        credit history information.
+                    </p>
+
+                </div>
+
+
+
+                <!-- STEP 02 -->
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+                    <div class="process-line"></div>
+
+                    <h3>
+                        Select Risk Threshold
+                    </h3>
+
+                    <p>
+                        Choose between accuracy-focused Soft or
+                        default-focused Hard classification.
+                    </p>
+
+                </div>
+
+
+
+                <!-- STEP 03 -->
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+                    <div class="process-line"></div>
+
+                    <h3>
+                        Isotonic XGBoost
+                    </h3>
+
+                    <p>
+                        The deployed calibrated model estimates the
+                        probability of loan default.
+                    </p>
+
+                </div>
+
+
+
+                <!-- STEP 04 -->
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        04
+                    </div>
+
+                    <div class="process-line"></div>
+
+                    <h3>
+                        Risk Assessment
+                    </h3>
+
+                    <p>
+                        Receive the predicted default probability
+                        and corresponding risk classification.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    CR
+                </div>
+
+                <div>
+
+                    <strong>
+                        Credit Risk Analyzer
+                    </strong>
+
+                    <span>
+                        ML-based loan default prediction
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-developer">
+
+                <span>
+                    Developed by
+                </span>
+
+                <strong>
+                    Manish Yadav
+                </strong>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <a href="https://github.com/Manishyadav526" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Credit Risk Analyzer. Built for educational
+                and demonstration purposes.
+            </p>
+
+            <p class="disclaimer">
+                This system provides ML-based risk estimates and
+                should not be used as the sole basis for financial
+                decisions.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="/home.js"></script>
+
+</body>
+
+</html>
